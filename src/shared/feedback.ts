@@ -3,9 +3,9 @@ export interface Feedback {
     lastname: string;
     telnum: string;
     email: string;
-    agree: string;
+    agree: boolean;
     contacttype: string;
     message: string;
-}
+};
 
 export const ContactType = ['None', 'Tel', 'Email'];
