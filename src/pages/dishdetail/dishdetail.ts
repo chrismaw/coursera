@@ -1,8 +1,9 @@
-import { Component, Inject } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component, Inject} from '@angular/core';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import {Dish} from "../../shared/dish";
 import {Comment} from "../../shared/comment";
 import {FavoriteProvider} from "../../providers/favorite/favorite";
+import {ActionSheetController} from "ionic-angular";
 
 /**
  * Generated class for the DishdetailPage page.
@@ -13,32 +14,82 @@ import {FavoriteProvider} from "../../providers/favorite/favorite";
 
 @IonicPage()
 @Component({
-  selector: 'page-dishdetail',
-  templateUrl: 'dishdetail.html',
+    selector: 'page-dishdetail',
+    templateUrl: 'dishdetail.html',
 })
 export class DishdetailPage {
-  dish: Dish;
-  errMess: string;
-  avgstars: string;
-  numcomments: number;
-  favorite: boolean;
+    dish: Dish;
+    errMess: string;
+    avgstars: string;
+    numcomments: number;
+    comment: string;
+    favorite: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-              @Inject('baseUrl') private baseUrl, private favoriteservice: FavoriteProvider) {
-    this.dish = navParams.get('dish');
-    this.numcomments = this.dish.comments.length;
-    this.favorite = this.favoriteservice.isFavorite(this.dish.id);
-    let total = 0;
-    this.dish.comments.forEach(comment => total += comment.rating );
-    this.avgstars = (total/this.numcomments).toFixed(2);
-  }
+    constructor(public navCtrl: NavController,
+                public navParams: NavParams,
+                @Inject('baseUrl') private baseUrl,
+                private favoriteservice: FavoriteProvider,
+                private toastCtrl: ToastController,
+                public actionSheetCtrl: ActionSheetController) {
+        this.dish = navParams.get('dish');
+        this.numcomments = this.dish.comments.length;
+        this.favorite = this.favoriteservice.isFavorite(this.dish.id);
+        let total = 0;
+        this.dish.comments.forEach(comment => total += comment.rating);
+        this.avgstars = (total / this.numcomments).toFixed(2);
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DishdetailPage');
-  }
+    }
 
-  addToFavorites() {
-    console.log('Adding to Favorites', this.dish.id);
-    this.favorite = this.favoriteservice.addFavorite(this.dish.id);
-  }
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad DishdetailPage');
+    }
+
+    addToFavorites() {
+        console.log('Adding to Favorites', this.dish.id);
+        this.favorite = this.favoriteservice.addFavorite(this.dish.id);
+        this.toastCtrl.create({
+            message: 'Dish ' + this.dish.id + ' added as favorite successfully',
+            position: 'middle',
+            duration: 3000
+        }).present();
+    }
+    addComment() {
+        console.log('Adding Comment', this.dish.id);
+
+        this.toastCtrl.create({
+            message: 'Comment for ' + this.dish.id + ' has been added successfully',
+            position: 'middle',
+            duration: 3000
+        }).present();
+    }
+
+    showActionSheet(){
+        let actionSheet = this.actionSheetCtrl.create({
+            title: 'More',
+            buttons: [
+                {
+                    text: 'Add to Favorites',
+                    role: 'destructive',
+                    handler: ()=> {
+                        console.log('Add to favs clicked');
+                        this.addToFavorites();
+                    }
+                },{
+                    text: 'Add a Comment',
+                    role: 'destructive',
+                    handler: ()=> {
+                        console.log('Add a comment clicked');
+
+                    }
+                },{
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: ()=> {
+                        console.log('Cancel clicked');
+                    }
+                }
+            ]
+        });
+        actionSheet.present();
+    }
 }

@@ -27,7 +27,7 @@ var ReservationPageModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__reservation__["a" /* ReservationPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reservation__["a" /* ReservationPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reservation__["a" /* ReservationPage */]),
             ],
         })
     ], ReservationPageModule);

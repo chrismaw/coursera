@@ -110,7 +110,7 @@ var DishdetailPage = (function () {
     };
     DishdetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dishdetail',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/dishdetail/dishdetail.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Dish Details</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card *ngIf="dish">\n    <img src="{{baseUrl + dish.image}}"/>\n    <ion-card-content>\n      <ion-card-title>\n        {{dish.name | uppercase}}\n      </ion-card-title>\n      <p>{{dish.description}}</p>\n    </ion-card-content>\n    <ion-row>\n      <ion-col>\n        <button ion-button icon-left clear small>\n          <ion-icon name="star"></ion-icon>\n          <div>{{ avgstars }} stars</div>\n        </button>\n      </ion-col>\n      <ion-col>\n        <button ion-button icon-left clear small>\n          <ion-icon name="text"></ion-icon>\n          <div>{{ numcomments }} Comments</div>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n<div [hidden]="dish || errMess">\n  <ion-spinner></ion-spinner>\n  <h4>Loading...</h4>\n</div>\n<div *ngIf="errMess">\n  <h2>Error</h2>\n  <h4>{{errMess}}</h4>\n</div>\n<ion-list *ngIf="dish">\n  <ion-list-header>Comments</ion-list-header>\n  <ion-item *ngFor="let comment of dish.comments" text-wrap>\n    <h4> {{comment.comment}} </h4>\n    <p> {{comment.rating}} Stars</p>\n    <p><span> -- {{comment.author}} {{comment.date | date }}</span></p>\n  </ion-item>\n</ion-list>\n  <ion-fab bottom right [hidden]="favorite">\n    <button ion-fab (click)="addToFavorites()">\n      <ion-icon name="heart-outline"></ion-icon>\n    </button>\n  </ion-fab>\n  <ion-fab bottom right *ngIf="favorite">\n    <button ion-fab>\n      <ion-icon name="heart"></ion-icon>\n    </button>\n  </ion-fab>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/dishdetail/dishdetail.html"*/,
+            selector: 'page-dishdetail',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/dishdetail/dishdetail.html"*/'<ion-header>\n\n    <ion-navbar color="primary" ion-grid>\n        <ion-row>\n        <ion-title ion-col>Dish Details</ion-title>\n        <button ion-button float-right clear large (click)="showActionSheet()">\n            <ion-icon color="primary-pale" name="more" ion-col col-1></ion-icon>\n        </button>\n        </ion-row>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-card *ngIf="dish">\n        <img src="{{baseUrl + dish.image}}"/>\n        <ion-card-content>\n            <ion-card-title>\n                {{dish.name | uppercase}}\n            </ion-card-title>\n            <p>{{dish.description}}</p>\n        </ion-card-content>\n        <ion-row>\n            <ion-col>\n                <button ion-button icon-left clear small>\n                    <ion-icon name="star"></ion-icon>\n                    <div>{{ avgstars }} stars</div>\n                </button>\n            </ion-col>\n            <ion-col>\n                <button ion-button icon-left clear small>\n                    <ion-icon name="text"></ion-icon>\n                    <div>{{ numcomments }} Comments</div>\n                </button>\n            </ion-col>\n        </ion-row>\n    </ion-card>\n    <div [hidden]="dish || errMess">\n        <ion-spinner></ion-spinner>\n        <h4>Loading...</h4>\n    </div>\n    <div *ngIf="errMess">\n        <h2>Error</h2>\n        <h4>{{errMess}}</h4>\n    </div>\n    <ion-list *ngIf="dish">\n        <ion-list-header>Comments</ion-list-header>\n        <ion-item *ngFor="let comment of dish.comments" text-wrap>\n            <h4> {{comment.comment}} </h4>\n            <p> {{comment.rating}} Stars</p>\n            <p><span> -- {{comment.author}} {{comment.date | date }}</span></p>\n        </ion-item>\n    </ion-list>\n    <ion-fab bottom right [hidden]="favorite">\n        <button ion-fab (click)="addToFavorites()">\n            <ion-icon name="heart-outline"></ion-icon>\n        </button>\n    </ion-fab>\n    <ion-fab bottom right *ngIf="favorite">\n        <button ion-fab>\n            <ion-icon name="heart"></ion-icon>\n        </button>\n    </ion-fab>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/dishdetail/dishdetail.html"*/,
         }),
         __param(2, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])('baseUrl')),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], Object, __WEBPACK_IMPORTED_MODULE_2__providers_favorite_favorite__["a" /* FavoriteProvider */]])
@@ -239,7 +239,6 @@ var FavoritesPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReservationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -251,7 +250,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 /**
  * Generated class for the ReservationPage page.
  *
@@ -259,16 +257,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ReservationPage = (function () {
-    function ReservationPage(navCtrl, navParams, viewCtrl, formBuilder) {
+    function ReservationPage(navCtrl, navParams, viewCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
-        this.formBuilder = formBuilder;
-        this.reservation = this.formBuilder.group({
-            guests: 3,
-            smoking: false,
-            dateTime: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-        });
     }
     ReservationPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ReservationPage');
@@ -276,18 +268,14 @@ var ReservationPage = (function () {
     ReservationPage.prototype.dismiss = function () {
         this.viewCtrl.dismiss();
     };
-    ReservationPage.prototype.onSubmit = function () {
-        console.log(this.reservation.value);
-        this.viewCtrl.dismiss();
-    };
     ReservationPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-reservation',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/reservation/reservation.html"*/'<!--\n  Generated template for the ReservationPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n<ion-toolbar color="primary-pale">\n  <ion-buttons start>\n    <button ion-button (click)="dismiss()">\n      <span ion-text color="primary" showWhen="ios">Cancel</span>\n      <ion-icon name="md-close" showWhen="android, windows"></ion-icon>\n    </button>\n  </ion-buttons>\n  <ion-title>Reserve Table</ion-title>\n</ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <form [formGroup]="reservation" (ngSubmit)="onSubmit()">\n    <ion-item>\n      <ion-label>No. of Guests</ion-label>\n      <ion-select formControlName="guests">\n        <ion-option value="1">1</ion-option>\n        <ion-option value="2">2</ion-option>\n        <ion-option value="3">3</ion-option>\n        <ion-option value="4">4</ion-option>\n        <ion-option value="6">5</ion-option>\n        <ion-option value="6">6</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n      <ion-label>Smoking?</ion-label>\n      <ion-toggle formControlName="smoking" checked="true"></ion-toggle>\n    </ion-item>\n    <ion-item>\n      <ion-label>Date and Time</ion-label>\n      <ion-datetime displayformat="MMM DD, \'YY hh:mm A" pickerFormat="MMM DD, \'YY hh:mm A" formControlName="dateTime"></ion-datetime>\n    </ion-item>\n    <button ion-button type="submit" [disabled]="!reservation.valid">Reserve</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/reservation/reservation.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */]])
     ], ReservationPage);
     return ReservationPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=reservation.js.map
@@ -391,27 +379,31 @@ webpackEmptyAsyncContext.id = 127;
 var map = {
 	"../pages/about/about.module": [
 		305,
-		5
+		14
+	],
+	"../pages/comment/comment.module": [
+		312,
+		8
 	],
 	"../pages/contact/contact.module": [
 		307,
-		4
+		13
 	],
 	"../pages/dishdetail/dishdetail.module": [
 		306,
-		3
+		12
 	],
 	"../pages/favorites/favorites.module": [
 		308,
-		2
+		11
 	],
 	"../pages/menu/menu.module": [
 		310,
-		1
+		10
 	],
 	"../pages/reservation/reservation.module": [
 		309,
-		0
+		9
 	]
 };
 function webpackAsyncContext(req) {
@@ -652,7 +644,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_contact_contact__["a" /* ContactPage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_dishdetail_dishdetail__["a" /* DishdetailPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_favorites_favorites__["a" /* FavoritesPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_reservation_reservation__["a" /* ReservationPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_reservation_reservation__["a" /* ReservationPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -676,8 +668,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_8__pages_menu_menu__["a" /* MenuPage */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_contact_contact__["a" /* ContactPage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_dishdetail_dishdetail__["a" /* DishdetailPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_favorites_favorites__["a" /* FavoritesPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_reservation_reservation__["a" /* ReservationPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_favorites_favorites__["a" /* FavoritesPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_13__ionic_native_status_bar__["a" /* StatusBar */],
@@ -776,7 +767,7 @@ var MyApp = (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar color="primary-dark">\n      <ion-title>A ConFusion Restaurant</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button color="primary-pale" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        <ion-icon [name]="p.icon" item-left></ion-icon>\n        {{p.title}}\n      </button>\n      <button color="primary-pale" menuClose ion-item (click)="openReserve()">\n      <ion-icon name="restaurant" item-left></ion-icon>\n      Reserve Table\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar color="primary-dark">\n      <ion-title>A ConFusion Restaurant</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button color="primary-pale" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        <ion-icon [name]="p.icon" item-left></ion-icon>\n        {{p.title}}\n      </button>\n      <button color="primary-pale" menuClose ion-item (click)="openReserve()">\n      <ion-icon name="restaurant" item-left></ion-icon>\n      Reserve Table\n      </button>\n\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Platform */],
