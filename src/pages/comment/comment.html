@@ -14,10 +14,26 @@
     </ion-buttons>
     <ion-title>Comment on Dish</ion-title>
   </ion-toolbar>
-
 </ion-header>
 
 
 <ion-content padding>
-
+  <form [formGroup]="commentForm">
+    <ion-item>
+      <ion-label><strong>Rating</strong></ion-label>
+      <ion-range min="1" max="5" step="1" snaps="true" formControlName="rating">
+        <ion-label range-left>1</ion-label>
+        <ion-label range-right>5</ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-label><strong>Author</strong></ion-label>
+      <ion-input type="text" formControlName="author"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><strong>Comment</strong></ion-label>
+      <ion-textarea formControlName="comment"></ion-textarea>
+    </ion-item>
+    <button ion-button small block (click)="onSubmit()">Submit</button>
+  </form>
 </ion-content>

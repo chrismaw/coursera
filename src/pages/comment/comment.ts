@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Component, Inject } from '@angular/core';
+import { IonicPage, Platform, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from "@angular/forms";
 import {Dish} from "../../shared/dish";
+import {DishProvider} from "../../providers/dish/dish";
 import {Comment} from "../../shared/comment";
 
 /**
@@ -17,20 +18,20 @@ import {Comment} from "../../shared/comment";
   templateUrl: 'comment.html',
 })
 export class CommentPage {
-
-  comment: FormGroup;
-  Dish: Dish[];
+  commentForm: FormGroup;
+  dish: Dish;
 
   constructor(public navCtrl: NavController,
+              public platform: Platform,
               public navParams: NavParams,
               public viewCtrl: ViewController,
-              private formBuilder: FormBuilder) {
+              @Inject(FormBuilder) fb: FormBuilder) {
 
-      this.comment = this.formBuilder.group({
-          rating: 5,
-          author: '',
-          comment: [Comment, Validators.required],
-          // date: ();
+      this.commentForm = fb.group({
+          "rating": [5, Validators.required],
+          "author": ['', Validators.required],
+          "comment": ['', Validators.required],
+          "date": new Date().toISOString()
       });
   }
 
@@ -41,10 +42,12 @@ export class CommentPage {
   dismiss() {
       this.viewCtrl.dismiss();
   }
-
+  // addComment() {
+  //     let comm = this.comment.value;
+  //     this.comm.push
+  //   }
   onSubmit(){
-      console.log(this.comment.value);
-      var com = this.comment.value;
-      this.viewCtrl.dismiss();
+      console.log(this.commentForm.value);
+      this.viewCtrl.dismiss(this.commentForm.value);
   }
 }

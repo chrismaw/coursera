@@ -1,9 +1,10 @@
 import {Component, Inject} from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, ModalController, NavController, NavParams, ToastController, ActionSheetController} from 'ionic-angular';
 import {Dish} from "../../shared/dish";
 import {Comment} from "../../shared/comment";
 import {FavoriteProvider} from "../../providers/favorite/favorite";
-import {ActionSheetController} from "ionic-angular";
+import {CommentPage} from "../comment/comment";
+import {CommentPageModule} from "../comment/comment.module";
 
 /**
  * Generated class for the DishdetailPage page.
@@ -30,7 +31,8 @@ export class DishdetailPage {
                 @Inject('baseUrl') private baseUrl,
                 private favoriteservice: FavoriteProvider,
                 private toastCtrl: ToastController,
-                public actionSheetCtrl: ActionSheetController) {
+                public actionSheetCtrl: ActionSheetController,
+                public modalCtrl: ModalController) {
         this.dish = navParams.get('dish');
         this.numcomments = this.dish.comments.length;
         this.favorite = this.favoriteservice.isFavorite(this.dish.id);
@@ -48,19 +50,18 @@ export class DishdetailPage {
         console.log('Adding to Favorites', this.dish.id);
         this.favorite = this.favoriteservice.addFavorite(this.dish.id);
         this.toastCtrl.create({
-            message: 'Dish ' + this.dish.id + ' added as favorite successfully',
+            message: 'Dish ' + this.dish.name + ' added as favorite successfully',
             position: 'middle',
             duration: 3000
         }).present();
     }
-    addComment() {
-        console.log('Adding Comment', this.dish.id);
 
-        this.toastCtrl.create({
-            message: 'Comment for ' + this.dish.id + ' has been added successfully',
-            position: 'middle',
-            duration: 3000
-        }).present();
+    showCommentModal() {
+        let modal = this.modalCtrl.create("CommentPage");
+            modal.onDidDismiss(data=>{
+                this.dish.comments.push(data);
+            });
+        modal.present();
     }
 
     showActionSheet(){
@@ -71,14 +72,13 @@ export class DishdetailPage {
                     text: 'Add to Favorites',
                     role: 'destructive',
                     handler: ()=> {
-                        console.log('Add to favs clicked');
                         this.addToFavorites();
                     }
                 },{
                     text: 'Add a Comment',
                     role: 'destructive',
                     handler: ()=> {
-                        console.log('Add a comment clicked');
+                        this.showCommentModal();
 
                     }
                 },{
