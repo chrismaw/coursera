@@ -11,7 +11,7 @@ import {MenuPage} from '../pages/menu/menu';
 import {ContactPage} from '../pages/contact/contact';
 import {FavoritesPage} from "../pages/favorites/favorites";
 import {ReservationPage} from "../pages/reservation/reservation";
-import {CommentPage} from "../pages/comment/comment";
+import {LoginPage} from '../pages/login/login';
 
 @Component({
     templateUrl: 'app.html'
@@ -61,8 +61,8 @@ export class MyApp {
         modal.present();
     }
 
-    openComment() {
-        let modal = this.modalCtrl.create(CommentPage);
+    openLogin() {
+        let modal = this.modalCtrl.create("LoginPage");
         modal.present();
     }
 }
