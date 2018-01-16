@@ -53,6 +53,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
   providers: [
     StatusBar,
     SplashScreen,
+    Storage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: 'baseUrl', useValue: baseUrl},
     DishProvider,

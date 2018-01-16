@@ -13,12 +13,12 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <div *ngIf="favorites">
+  <div *ngIf="favorites; else no_favorites">
     <ion-list>
       <ion-item-sliding *ngFor="let favorite of favorites" #item>
         <ion-item>
           <ion-thumbnail item-left>
-            <img src="{{BaseURL + favorite.image}}" />
+            <img src="{{baseUrl + favorite.image}}" />
           </ion-thumbnail>
           <h3>{{ favorite.name }}</h3>
           <p>{{ favorite.description }}</p>
@@ -31,6 +31,9 @@
       </ion-item-sliding>
     </ion-list>
   </div>
+  <ng-template #no_favorites>
+    <p>Wow...no favorites. Get a life.</p>
+  </ng-template>
   <div [hidden]="favorites || errMess">
     <ion-spinner></ion-spinner>
     <h4>Loading...</h4>

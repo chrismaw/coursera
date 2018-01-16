@@ -1,13 +1,13 @@
-webpackJsonp([7],{
+webpackJsonp([8],{
 
-/***/ 109:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_leader_leader__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_leader_leader__ = __webpack_require__(85);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,13 +59,13 @@ var AboutPage = (function () {
 
 /***/ }),
 
-/***/ 110:
+/***/ 111:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -104,13 +104,13 @@ var ContactPage = (function () {
 
 /***/ }),
 
-/***/ 111:
+/***/ 112:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DishdetailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_favorite_favorite__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -127,7 +127,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 
 
 
-
 /**
  * Generated class for the DishdetailPage page.
  *
@@ -135,13 +134,14 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
  * Ionic pages and navigation.
  */
 var DishdetailPage = (function () {
-    function DishdetailPage(navCtrl, navParams, baseUrl, favoriteservice, toastCtrl, actionSheetCtrl) {
+    function DishdetailPage(navCtrl, navParams, baseUrl, favoriteservice, toastCtrl, actionSheetCtrl, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.baseUrl = baseUrl;
         this.favoriteservice = favoriteservice;
         this.toastCtrl = toastCtrl;
         this.actionSheetCtrl = actionSheetCtrl;
+        this.modalCtrl = modalCtrl;
         this.dish = navParams.get('dish');
         this.numcomments = this.dish.comments.length;
         this.favorite = this.favoriteservice.isFavorite(this.dish.id);
@@ -156,18 +156,18 @@ var DishdetailPage = (function () {
         console.log('Adding to Favorites', this.dish.id);
         this.favorite = this.favoriteservice.addFavorite(this.dish.id);
         this.toastCtrl.create({
-            message: 'Dish ' + this.dish.id + ' added as favorite successfully',
+            message: 'Dish ' + this.dish.name + ' added as favorite successfully',
             position: 'middle',
             duration: 3000
         }).present();
     };
-    DishdetailPage.prototype.addComment = function () {
-        console.log('Adding Comment', this.dish.id);
-        this.toastCtrl.create({
-            message: 'Comment for ' + this.dish.id + ' has been added successfully',
-            position: 'middle',
-            duration: 3000
-        }).present();
+    DishdetailPage.prototype.showCommentModal = function () {
+        var _this = this;
+        var modal = this.modalCtrl.create("CommentPage");
+        modal.onDidDismiss(function (data) {
+            _this.dish.comments.push(data);
+        });
+        modal.present();
     };
     DishdetailPage.prototype.showActionSheet = function () {
         var _this = this;
@@ -178,14 +178,13 @@ var DishdetailPage = (function () {
                     text: 'Add to Favorites',
                     role: 'destructive',
                     handler: function () {
-                        console.log('Add to favs clicked');
                         _this.addToFavorites();
                     }
                 }, {
                     text: 'Add a Comment',
                     role: 'destructive',
                     handler: function () {
-                        console.log('Add a comment clicked');
+                        _this.showCommentModal();
                     }
                 }, {
                     text: 'Cancel',
@@ -200,13 +199,14 @@ var DishdetailPage = (function () {
     };
     DishdetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dishdetail',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/dishdetail/dishdetail.html"*/'<ion-header>\n    <ion-navbar color="primary">\n\n        <ion-title>Dish Details</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card *ngIf="dish">\n        <img src="{{baseUrl + dish.image}}"/>\n        <ion-card-content>\n            <ion-card-title>\n                {{dish.name | uppercase}}\n                <button ion-button float-right clear large (click)="showActionSheet()">\n                    <ion-icon name="more"></ion-icon>\n                </button>\n            </ion-card-title>\n\n            <p>{{dish.description}}</p>\n        </ion-card-content>\n        <ion-row>\n            <ion-col>\n                <button ion-button icon-left clear small>\n                    <ion-icon name="star"></ion-icon>\n                    <div>{{ avgstars }} stars</div>\n                </button>\n            </ion-col>\n            <ion-col>\n                <button ion-button icon-left clear small>\n                    <ion-icon name="text"></ion-icon>\n                    <div>{{ numcomments }} Comments</div>\n                </button>\n            </ion-col>\n        </ion-row>\n    </ion-card>\n    <div [hidden]="dish || errMess">\n        <ion-spinner></ion-spinner>\n        <h4>Loading...</h4>\n    </div>\n    <div *ngIf="errMess">\n        <h2>Error</h2>\n        <h4>{{errMess}}</h4>\n    </div>\n    <ion-list *ngIf="dish">\n        <ion-list-header>Comments</ion-list-header>\n        <ion-item *ngFor="let comment of dish.comments" text-wrap>\n            <h4> {{comment.comment}} </h4>\n            <p> {{comment.rating}} Stars</p>\n            <p><span> -- {{comment.author}} {{comment.date | date }}</span></p>\n        </ion-item>\n    </ion-list>\n    <ion-fab bottom right [hidden]="favorite">\n        <button ion-fab (click)="addToFavorites()">\n            <ion-icon name="heart-outline"></ion-icon>\n        </button>\n    </ion-fab>\n    <ion-fab bottom right *ngIf="favorite">\n        <button ion-fab>\n            <ion-icon name="heart"></ion-icon>\n        </button>\n    </ion-fab>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/dishdetail/dishdetail.html"*/,
+            selector: 'page-dishdetail',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/dishdetail/dishdetail.html"*/'<ion-header>\n    <ion-navbar color="primary">\n\n        <ion-title>Dish Details</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-grid>\n        <ion-row>\n            <ion-col col-12 col-md-6>\n                <ion-card *ngIf="dish">\n                    <img src="{{baseUrl + dish.image}}"/>\n                    <ion-card-content>\n                        <ion-card-title>\n                            {{dish.name | uppercase}}\n                            <button ion-button float-right clear large (click)="showActionSheet()">\n                                <ion-icon name="more"></ion-icon>\n                            </button>\n                        </ion-card-title>\n\n                        <p>{{dish.description}}</p>\n                    </ion-card-content>\n                    <ion-row>\n                        <ion-col>\n                            <button ion-button icon-left clear small>\n                                <ion-icon name="star"></ion-icon>\n                                <div>{{ avgstars }} stars</div>\n                            </button>\n                        </ion-col>\n                        <ion-col>\n                            <button ion-button icon-left clear small>\n                                <ion-icon name="text"></ion-icon>\n                                <div>{{ numcomments }} Comments</div>\n                            </button>\n                        </ion-col>\n                    </ion-row>\n                </ion-card>\n                <div [hidden]="dish || errMess">\n                    <ion-spinner></ion-spinner>\n                    <h4>Loading...</h4>\n                </div>\n                <div *ngIf="errMess">\n                    <h2>Error</h2>\n                    <h4>{{errMess}}</h4>\n                </div>\n            </ion-col>\n            <ion-col col-12 col-md-6>\n                <ion-list *ngIf="dish">\n                    <ion-list-header>Comments</ion-list-header>\n                    <ion-item *ngFor="let comment of dish.comments" text-wrap>\n                        <h4> {{comment.comment}} </h4>\n                        <p> {{comment.rating}} Stars</p>\n                        <p><span> -- {{comment.author}} {{comment.date | date }}</span></p>\n                    </ion-item>\n                </ion-list>\n            </ion-col>\n        </ion-row>\n    </ion-grid>\n\n\n    <ion-fab bottom right [hidden]="favorite">\n        <button ion-fab (click)="addToFavorites()">\n            <ion-icon name="heart-outline"></ion-icon>\n        </button>\n    </ion-fab>\n    <ion-fab bottom right *ngIf="favorite">\n        <button ion-fab>\n            <ion-icon name="heart"></ion-icon>\n        </button>\n    </ion-fab>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/dishdetail/dishdetail.html"*/,
         }),
         __param(2, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])('baseUrl')),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], Object, __WEBPACK_IMPORTED_MODULE_2__providers_favorite_favorite__["a" /* FavoriteProvider */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */]])
     ], DishdetailPage);
     return DishdetailPage;
 }());
@@ -215,13 +215,13 @@ var DishdetailPage = (function () {
 
 /***/ }),
 
-/***/ 112:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoritesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_favorite_favorite__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -313,31 +313,92 @@ var FavoritesPage = (function () {
     };
     FavoritesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-favorites',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/favorites/favorites.html"*/'<!--\n  Generated template for the FavoritesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>My Favorites</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="favorites">\n    <ion-list>\n      <ion-item-sliding *ngFor="let favorite of favorites" #item>\n        <ion-item>\n          <ion-thumbnail item-left>\n            <img src="{{BaseURL + favorite.image}}" />\n          </ion-thumbnail>\n          <h3>{{ favorite.name }}</h3>\n          <p>{{ favorite.description }}</p>\n        </ion-item>\n        <ion-item-options side="right">\n          <button ion-button color="danger" (click)="deleteFavorite(item, favorite.id)">\n            <ion-icon name="trash"></ion-icon>\n          </button>\n        </ion-item-options>\n      </ion-item-sliding>\n    </ion-list>\n  </div>\n  <div [hidden]="favorites || errMess">\n    <ion-spinner></ion-spinner>\n    <h4>Loading...</h4>\n  </div>\n  <div *ngIf="errMess">\n    <h2>Error</h2>\n    <h4>{{ errMess }}</h4>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/favorites/favorites.html"*/,
+            selector: 'page-favorites',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/favorites/favorites.html"*/'<!--\n  Generated template for the FavoritesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>My Favorites</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="favorites; else no_favorites">\n    <ion-list>\n      <ion-item-sliding *ngFor="let favorite of favorites" #item>\n        <ion-item>\n          <ion-thumbnail item-left>\n            <img src="{{baseUrl + favorite.image}}" />\n          </ion-thumbnail>\n          <h3>{{ favorite.name }}</h3>\n          <p>{{ favorite.description }}</p>\n        </ion-item>\n        <ion-item-options side="right">\n          <button ion-button color="danger" (click)="deleteFavorite(item, favorite.id)">\n            <ion-icon name="trash"></ion-icon>\n          </button>\n        </ion-item-options>\n      </ion-item-sliding>\n    </ion-list>\n  </div>\n  <ng-template #no_favorites>\n    <p>Wow...no favorites. Get a life.</p>\n  </ng-template>\n  <div [hidden]="favorites || errMess">\n    <ion-spinner></ion-spinner>\n    <h4>Loading...</h4>\n  </div>\n  <div *ngIf="errMess">\n    <h2>Error</h2>\n    <h4>{{ errMess }}</h4>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/favorites/favorites.html"*/,
         }),
         __param(3, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])('baseUrl')),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_favorite_favorite__["a" /* FavoriteProvider */], Object, __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_favorite_favorite__["a" /* FavoriteProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_favorite_favorite__["a" /* FavoriteProvider */]) === "function" && _c || Object, Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object])
     ], FavoritesPage);
     return FavoritesPage;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=favorites.js.map
 
 /***/ }),
 
-/***/ 113:
+/***/ 114:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReservationPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the ReservationPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ReservationPage = (function () {
+    function ReservationPage(navCtrl, navParams, viewCtrl, formBuilder) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.formBuilder = formBuilder;
+        this.reservation = this.formBuilder.group({
+            guests: 3,
+            smoking: false,
+            dateTime: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
+        });
+    }
+    ReservationPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ReservationPage');
+    };
+    ReservationPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    ReservationPage.prototype.onSubmit = function () {
+        console.log(this.reservation.value);
+        this.viewCtrl.dismiss();
+    };
+    ReservationPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-reservation',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/reservation/reservation.html"*/'<!--\n  Generated template for the ReservationPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n<ion-toolbar color="primary-pale">\n  <ion-buttons start>\n    <button ion-button (click)="dismiss()">\n      <span ion-text color="primary" showWhen="ios">Cancel</span>\n      <ion-icon name="md-close" showWhen="android, windows"></ion-icon>\n    </button>\n  </ion-buttons>\n  <ion-title>Reserve Table</ion-title>\n</ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <form [formGroup]="reservation" (ngSubmit)="onSubmit()">\n    <ion-item>\n      <ion-label>No. of Guests</ion-label>\n      <ion-select formControlName="guests">\n        <ion-option value="1">1</ion-option>\n        <ion-option value="2">2</ion-option>\n        <ion-option value="3">3</ion-option>\n        <ion-option value="4">4</ion-option>\n        <ion-option value="6">5</ion-option>\n        <ion-option value="6">6</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n      <ion-label>Smoking?</ion-label>\n      <ion-toggle formControlName="smoking" checked="true"></ion-toggle>\n    </ion-item>\n    <ion-item>\n      <ion-label>Date and Time</ion-label>\n      <ion-datetime displayformat="MMM DD, \'YY hh:mm A" pickerFormat="MMM DD, \'YY hh:mm A" formControlName="dateTime"></ion-datetime>\n    </ion-item>\n    <button ion-button type="submit" [disabled]="!reservation.valid">Reserve</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/reservation/reservation.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
+    ], ReservationPage);
+    return ReservationPage;
+}());
+
+//# sourceMappingURL=reservation.js.map
+
+/***/ }),
+
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_dish_dish__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dishdetail_dishdetail__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dishdetail_dishdetail__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_favorite_favorite__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -409,70 +470,6 @@ var MenuPage = (function () {
 
 /***/ }),
 
-/***/ 114:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReservationPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the ReservationPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ReservationPage = (function () {
-    function ReservationPage(navCtrl, navParams, viewCtrl, formBuilder) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-        this.formBuilder = formBuilder;
-        this.reservation = this.formBuilder.group({
-            guests: 3,
-            smoking: false,
-            dateTime: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-        });
-    }
-    ReservationPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ReservationPage');
-    };
-    ReservationPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    ReservationPage.prototype.onSubmit = function () {
-        console.log(this.reservation.value);
-        this.viewCtrl.dismiss();
-    };
-    ReservationPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-reservation',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/reservation/reservation.html"*/'<!--\n  Generated template for the ReservationPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n<ion-toolbar color="primary-pale">\n  <ion-buttons start>\n    <button ion-button (click)="dismiss()">\n      <span ion-text color="primary" showWhen="ios">Cancel</span>\n      <ion-icon name="md-close" showWhen="android, windows"></ion-icon>\n    </button>\n  </ion-buttons>\n  <ion-title>Reserve Table</ion-title>\n</ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <form [formGroup]="reservation" (ngSubmit)="onSubmit()">\n    <ion-item>\n      <ion-label>No. of Guests</ion-label>\n      <ion-select formControlName="guests">\n        <ion-option value="1">1</ion-option>\n        <ion-option value="2">2</ion-option>\n        <ion-option value="3">3</ion-option>\n        <ion-option value="4">4</ion-option>\n        <ion-option value="6">5</ion-option>\n        <ion-option value="6">6</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n      <ion-label>Smoking?</ion-label>\n      <ion-toggle formControlName="smoking" checked="true"></ion-toggle>\n    </ion-item>\n    <ion-item>\n      <ion-label>Date and Time</ion-label>\n      <ion-datetime displayformat="MMM DD, \'YY hh:mm A" pickerFormat="MMM DD, \'YY hh:mm A" formControlName="dateTime"></ion-datetime>\n    </ion-item>\n    <button ion-button type="submit" [disabled]="!reservation.valid">Reserve</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/reservation/reservation.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
-    ], ReservationPage);
-    return ReservationPage;
-}());
-
-//# sourceMappingURL=reservation.js.map
-
-/***/ }),
-
 /***/ 127:
 /***/ (function(module, exports) {
 
@@ -495,36 +492,36 @@ webpackEmptyAsyncContext.id = 127;
 
 var map = {
 	"../pages/about/about.module": [
-		306,
-		16
+		309,
+		7
 	],
 	"../pages/comment/comment.module": [
-		307,
-		15
+		312,
+		1
 	],
 	"../pages/contact/contact.module": [
-		308,
-		14
+		310,
+		6
 	],
 	"../pages/dishdetail/dishdetail.module": [
-		309,
-		13
+		311,
+		5
 	],
 	"../pages/favorites/favorites.module": [
-		310,
-		12
+		313,
+		4
 	],
 	"../pages/login/login.module": [
 		314,
-		9
+		0
 	],
 	"../pages/menu/menu.module": [
-		311,
-		11
+		316,
+		3
 	],
 	"../pages/reservation/reservation.module": [
-		312,
-		10
+		315,
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -549,10 +546,10 @@ module.exports = webpackAsyncContext;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_dish_dish__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_promotion_promotion__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_leader_leader__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_leader_leader__ = __webpack_require__(85);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -592,12 +589,10 @@ var HomePage = (function () {
             selector: 'page-home',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/home/home.html"*/'<ion-header>\n    <ion-navbar color="primary">\n        <button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>A Confusion Restaurant</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-grid>\n        <ion-row align-items-center>\n            <ion-col col-12 col-lg-4>\n                <ion-card *ngIf="dish">\n                    <img src="{{baseUrl + dish.image}}"/>\n                    <ion-card-content>\n                        <ion-card-title>\n                            {{dish.name | uppercase}}\n                        </ion-card-title>\n                        <p>{{ dish.description}}</p>\n                    </ion-card-content>\n                </ion-card>\n                <div [hidden]="dish || dishErrMess">\n                    <ion-spinner></ion-spinner>\n                    <h4>Loading...</h4>\n                </div>\n                <div *ngIf="dishErrMess">\n                    <h2>Error</h2>\n                    <h4>{{dishErrMess}}</h4>\n                </div>\n            </ion-col>\n            <ion-col col-12 col-lg-4>\n                <ion-card *ngIf="promotion">\n                    <img src="{{baseUrl + promotion.image}}"/>\n                    <ion-card-content>\n                        <ion-card-title>\n                            {{promotion.name | uppercase}}\n                        </ion-card-title>\n                        <p>{{ promotion.description}}</p>\n                    </ion-card-content>\n                </ion-card>\n                <div [hidden]="promotion || promoErrMess">\n                    <ion-spinner></ion-spinner>\n                    <h4>Loading...</h4>\n                </div>\n                <div *ngIf="promoErrMess">\n                    <h2>Error</h2>\n                    <h4>{{promoErrMess}}</h4>\n                </div>\n            </ion-col>\n            <ion-col col-12 col-lg-4>\n                <ion-card *ngIf="leader">\n                    <img src="{{baseUrl + leader.image}}"/>\n                    <ion-card-content>\n                        <ion-card-title>\n                            {{leader.name | uppercase}}\n                        </ion-card-title>\n                        <p>{{ leader.designation}}</p>\n                        <p>{{ leader.description}}</p>\n                    </ion-card-content>\n                </ion-card>\n                <div [hidden]="leader || leaderErrMess">\n                    <ion-spinner></ion-spinner>\n                    <h4>Loading...</h4>\n                </div>\n                <div *ngIf="leaderErrMess">\n                    <h2>Error</h2>\n                    <h4>{{leaderErrMess}}</h4>\n                </div>\n            </ion-col>\n        </ion-row>\n    </ion-grid>\n\n    <ion-fab right bottom>\n        <button ion-fab color="accent">\n            <ion-icon name="arrow-dropup"></ion-icon>\n        </button>\n        <ion-fab-list side="top">\n            <button ion-fab class="btn-mail">\n                <ion-icon name="mail"></ion-icon>\n            </button>\n            <button ion-fab class="btn-google-plus">\n                <ion-icon name="logo-googleplus"></ion-icon>\n            </button>\n            <button ion-fab class="btn-youtube">\n                <ion-icon name="logo-youtube"></ion-icon>\n            </button>\n            <button ion-fab class="btn-twitter">\n                <ion-icon name="logo-twitter"></ion-icon>\n            </button>\n            <button ion-fab class="btn-facebook">\n                <ion-icon name="logo-facebook"></ion-icon>\n            </button>\n            <button ion-fab class="btn-linkedin">\n                <ion-icon name="logo-linkedin"></ion-icon>\n            </button>\n        </ion-fab-list>\n    </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/home/home.html"*/
         }),
         __param(4, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])('baseUrl')),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_dish_dish__["a" /* DishProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_promotion_promotion__["a" /* PromotionProvider */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_leader_leader__["a" /* LeaderProvider */], Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_dish_dish__["a" /* DishProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_dish_dish__["a" /* DishProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_promotion_promotion__["a" /* PromotionProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_promotion_promotion__["a" /* PromotionProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_leader_leader__["a" /* LeaderProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_leader_leader__["a" /* LeaderProvider */]) === "function" && _d || Object, Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -615,9 +610,9 @@ var HomePage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__process_httpmsg_process_httpmsg__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -709,21 +704,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_baseUrl__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(302);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_about_about__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_menu_menu__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_contact_contact__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_dishdetail_dishdetail__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_favorites_favorites__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_about_about__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_menu_menu__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_contact_contact__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_dishdetail_dishdetail__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_favorites_favorites__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_reservation_reservation__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_dish_dish__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_leader_leader__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_leader_leader__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_promotion_promotion__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_process_httpmsg_process_httpmsg__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_favorite_favorite__ = __webpack_require__(52);
@@ -775,13 +770,13 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/comment/comment.module#CommentPageModule', name: 'CommentPage', segment: 'comment', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dishdetail/dishdetail.module#DishdetailPageModule', name: 'DishdetailPage', segment: 'dishdetail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/comment/comment.module#CommentPageModule', name: 'CommentPage', segment: 'comment', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/favorites/favorites.module#FavoritesPageModule', name: 'FavoritesPage', segment: 'favorites', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/reservation/reservation.module#ReservationPageModule', name: 'ReservationPage', segment: 'reservation', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -800,6 +795,7 @@ var AppModule = (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__["a" /* SplashScreen */],
+                Storage,
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicErrorHandler */] },
                 { provide: 'baseUrl', useValue: __WEBPACK_IMPORTED_MODULE_4__shared_baseUrl__["a" /* baseUrl */] },
                 __WEBPACK_IMPORTED_MODULE_16__providers_dish_dish__["a" /* DishProvider */],
@@ -817,21 +813,21 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 299:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_about_about__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_menu_menu__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_contact_contact__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_favorites_favorites__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_about_about__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_menu_menu__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_contact_contact__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_favorites_favorites__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_reservation_reservation__ = __webpack_require__(114);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -895,15 +891,18 @@ var MyApp = (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/app/app.html"*/'<ion-split-pane>\n<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar color="primary-dark">\n      <ion-title>A ConFusion Restaurant</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content class="background-pale">\n    <ion-list>\n      <ion-list-header color="primary-light" text-wrap>\n        <ion-thumbnail item-left>\n          <img src="../assets/imgs/rest_logo.png" />\n        </ion-thumbnail>\n        <h3>Ristorante Con Fusion</h3>\n      </ion-list-header>\n      <button color="primary-pale" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        <ion-icon [name]="p.icon" item-left></ion-icon>\n        {{p.title}}\n      </button>\n      <button color="primary-pale" menuClose ion-item (click)="openReserve()">\n      <ion-icon name="restaurant" item-left></ion-icon>\n      Reserve Table\n      </button>\n      <button color="primary-pale" menuClose ion-item (click)="openLogin()">\n        <ion-icon name="log-in" item-left></ion-icon>\n        Login\n      </button>\n\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>\n</ion-split-pane>'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Platform */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* ModalController */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* ModalController */]])
     ], MyApp);
     return MyApp;
-    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=app.component.js.map
@@ -991,12 +990,13 @@ var ProcessHttpmsgProvider = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoriteProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dish_dish__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dish_dish__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1011,6 +1011,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /*
   Generated class for the FavoriteProvider provider.
 
@@ -1018,11 +1019,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   and Angular DI.
 */
 var FavoriteProvider = (function () {
-    function FavoriteProvider(http, dishservice) {
+    function FavoriteProvider(http, dishservice, storage) {
+        var _this = this;
         this.http = http;
         this.dishservice = dishservice;
-        console.log('Hello FavoriteProvider Provider');
-        this.favorites = [];
+        this.storage = storage;
+        this.storage.get('favorites').then(function (data) {
+            if (data) {
+                _this.favorites = data;
+            }
+            else {
+                _this.favorites = [];
+            }
+        });
     }
     FavoriteProvider.prototype.isFavorite = function (id) {
         return this.favorites.some(function (el) { return el === id; });
@@ -1030,6 +1039,7 @@ var FavoriteProvider = (function () {
     FavoriteProvider.prototype.addFavorite = function (id) {
         if (!this.isFavorite(id))
             this.favorites.push(id);
+        this.storage.set('favorites', this.favorites);
         console.log('favorites', this.favorites);
         return true;
     };
@@ -1042,18 +1052,20 @@ var FavoriteProvider = (function () {
         var index = this.favorites.indexOf(id);
         if (index >= 0) {
             this.favorites.splice(index, 1);
+            this.storage.set('favorites', this.favorites);
             return this.getFavorites();
         }
         else {
             console.log('Deleting non-existing favorite', id);
-            return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw('Deleting non-existing favorite' + id);
+            return __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["Observable"].throw('Deleting non-existing favorite' + id);
         }
     };
     FavoriteProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__dish_dish__["a" /* DishProvider */]])
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__dish_dish__["a" /* DishProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__dish_dish__["a" /* DishProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]) === "function" && _c || Object])
     ], FavoriteProvider);
     return FavoriteProvider;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=favorite.js.map
@@ -1071,9 +1083,9 @@ var FavoriteProvider = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__process_httpmsg_process_httpmsg__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1143,7 +1155,7 @@ var DishProvider = (function () {
 
 /***/ }),
 
-/***/ 84:
+/***/ 85:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1154,9 +1166,9 @@ var DishProvider = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__process_httpmsg_process_httpmsg__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_delay__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
