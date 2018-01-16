@@ -46,7 +46,7 @@ var AboutPage = (function () {
     };
     AboutPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-about',template:/*ion-inline-start:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\about\about.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>About Us</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n<ion-card>\n\n  <ion-card-content>\n\n    <ion-card-title color="primary">Our History</ion-card-title>\n\n    <p text-justify>Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage from the A-list clientele in Hong Kong.  Featuring four of the best three-star Michelin chefs in the world, you never know what will arrive on your plate the next time you visit us.</p>\n\n    <p text-justify>The restaurant traces its humble beginnings to The Frying Pan, a successful chain started by our CEO, Mr. Peter Pan, that featured for the first time the world\'s best cuisines in a pan.</p>\n\n  </ion-card-content>\n\n</ion-card>\n\n  <ion-card *ngIf="leaders">\n\n    <ion-card-content>\n\n      <ion-card-title color="primary">Corporate Leadership</ion-card-title>\n\n    <div *ngFor="let leader of leaders">\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-3>\n\n            <img style="border-radius: 100%" src="{{baseUrl + leader.image}}">\n\n          </ion-col >\n\n          <ion-col col-9>\n\n            <h2>{{leader.name}}</h2>\n\n            <h3>{{leader.designation}}</h3>\n\n            <p>{{leader.description}}</p>\n\n            <br>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </div>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\about\about.html"*/,
+            selector: 'page-about',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>About Us</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n<ion-card>\n  <ion-card-content>\n    <ion-card-title color="primary">Our History</ion-card-title>\n    <p text-justify>Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage from the A-list clientele in Hong Kong.  Featuring four of the best three-star Michelin chefs in the world, you never know what will arrive on your plate the next time you visit us.</p>\n    <p text-justify>The restaurant traces its humble beginnings to The Frying Pan, a successful chain started by our CEO, Mr. Peter Pan, that featured for the first time the world\'s best cuisines in a pan.</p>\n  </ion-card-content>\n</ion-card>\n  <ion-card *ngIf="leaders">\n    <ion-card-content>\n      <ion-card-title color="primary">Corporate Leadership</ion-card-title>\n    <div *ngFor="let leader of leaders">\n      <ion-grid>\n        <ion-row>\n          <ion-col col-3>\n            <img style="border-radius: 100%" src="{{baseUrl + leader.image}}">\n          </ion-col >\n          <ion-col col-9>\n            <h2>{{leader.name}}</h2>\n            <h3>{{leader.designation}}</h3>\n            <p>{{leader.description}}</p>\n            <br>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </div>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/about/about.html"*/,
         }),
         __param(3, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])('baseUrl')),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
@@ -93,7 +93,7 @@ var ContactPage = (function () {
     };
     ContactPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-contact',template:/*ion-inline-start:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\contact\contact.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Contact Us</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n<ion-card>\n\n  <ion-card-content>\n\n    <ion-card-title color="primary">Location Information</ion-card-title>\n\n    <address>\n\n      121, Clear Water Bay Road<br>\n\n      Clear Water Bay, Kowloon<br>\n\n      HONG KONG\n\n    <p icon-left><ion-icon name="call"></ion-icon>+852 1234 5678</p>\n\n    <p icon-left><ion-icon name="print"></ion-icon>+852 8765 432</p>\n\n    <p icon-left><ion-icon name="mail"></ion-icon>confusion@food.net</p>\n\n    </address>\n\n    <button ion-button icon-left float-left clear medium>\n\n      <ion-icon name="call"></ion-icon><span>CALL</span>\n\n    </button>\n\n    <button ion-button icon-left float-right clear medium>\n\n      <ion-icon name="mail"></ion-icon><span>EMAIL</span>\n\n    </button>\n\n  </ion-card-content>\n\n</ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\contact\contact.html"*/,
+            selector: 'page-contact',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/contact/contact.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Contact Us</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n<ion-card>\n  <ion-card-content>\n    <ion-card-title color="primary">Location Information</ion-card-title>\n    <address>\n      121, Clear Water Bay Road<br>\n      Clear Water Bay, Kowloon<br>\n      HONG KONG\n    <p icon-left><ion-icon name="call"></ion-icon>+852 1234 5678</p>\n    <p icon-left><ion-icon name="print"></ion-icon>+852 8765 432</p>\n    <p icon-left><ion-icon name="mail"></ion-icon>confusion@food.net</p>\n    </address>\n    <button ion-button icon-left float-left clear medium>\n      <ion-icon name="call"></ion-icon><span>CALL</span>\n    </button>\n    <button ion-button icon-left float-right clear medium (click)="sendEmail()">\n      <ion-icon name="mail"></ion-icon><span>EMAIL</span>\n    </button>\n  </ion-card-content>\n</ion-card>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/contact/contact.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], ContactPage);
@@ -199,7 +199,7 @@ var DishdetailPage = (function () {
     };
     DishdetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dishdetail',template:/*ion-inline-start:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\dishdetail\dishdetail.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n\n\n        <ion-title>Dish Details</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-card *ngIf="dish">\n\n        <img src="{{baseUrl + dish.image}}"/>\n\n        <ion-card-content>\n\n            <ion-card-title>\n\n                {{dish.name | uppercase}}\n\n                <button ion-button float-right clear large (click)="showActionSheet()">\n\n                    <ion-icon name="more"></ion-icon>\n\n                </button>\n\n            </ion-card-title>\n\n\n\n            <p>{{dish.description}}</p>\n\n        </ion-card-content>\n\n        <ion-row>\n\n            <ion-col>\n\n                <button ion-button icon-left clear small>\n\n                    <ion-icon name="star"></ion-icon>\n\n                    <div>{{ avgstars }} stars</div>\n\n                </button>\n\n            </ion-col>\n\n            <ion-col>\n\n                <button ion-button icon-left clear small>\n\n                    <ion-icon name="text"></ion-icon>\n\n                    <div>{{ numcomments }} Comments</div>\n\n                </button>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-card>\n\n    <div [hidden]="dish || errMess">\n\n        <ion-spinner></ion-spinner>\n\n        <h4>Loading...</h4>\n\n    </div>\n\n    <div *ngIf="errMess">\n\n        <h2>Error</h2>\n\n        <h4>{{errMess}}</h4>\n\n    </div>\n\n    <ion-list *ngIf="dish">\n\n        <ion-list-header>Comments</ion-list-header>\n\n        <ion-item *ngFor="let comment of dish.comments" text-wrap>\n\n            <h4> {{comment.comment}} </h4>\n\n            <p> {{comment.rating}} Stars</p>\n\n            <p><span> -- {{comment.author}} {{comment.date | date }}</span></p>\n\n        </ion-item>\n\n    </ion-list>\n\n    <ion-fab bottom right [hidden]="favorite">\n\n        <button ion-fab (click)="addToFavorites()">\n\n            <ion-icon name="heart-outline"></ion-icon>\n\n        </button>\n\n    </ion-fab>\n\n    <ion-fab bottom right *ngIf="favorite">\n\n        <button ion-fab>\n\n            <ion-icon name="heart"></ion-icon>\n\n        </button>\n\n    </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\dishdetail\dishdetail.html"*/,
+            selector: 'page-dishdetail',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/dishdetail/dishdetail.html"*/'<ion-header>\n    <ion-navbar color="primary">\n\n        <ion-title>Dish Details</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-grid>\n        <ion-row>\n            <ion-col col-12 col-md-6>\n                <ion-card *ngIf="dish">\n                    <img src="{{baseUrl + dish.image}}"/>\n                    <ion-card-content>\n                        <ion-card-title>\n                            {{dish.name | uppercase}}\n                            <button ion-button float-right clear large (click)="showActionSheet()">\n                                <ion-icon name="more"></ion-icon>\n                            </button>\n                        </ion-card-title>\n\n                        <p>{{dish.description}}</p>\n                    </ion-card-content>\n                    <ion-row>\n                        <ion-col>\n                            <button ion-button icon-left clear small>\n                                <ion-icon name="star"></ion-icon>\n                                <div>{{ avgstars }} stars</div>\n                            </button>\n                        </ion-col>\n                        <ion-col>\n                            <button ion-button icon-left clear small>\n                                <ion-icon name="text"></ion-icon>\n                                <div>{{ numcomments }} Comments</div>\n                            </button>\n                        </ion-col>\n                    </ion-row>\n                </ion-card>\n                <div [hidden]="dish || errMess">\n                    <ion-spinner></ion-spinner>\n                    <h4>Loading...</h4>\n                </div>\n                <div *ngIf="errMess">\n                    <h2>Error</h2>\n                    <h4>{{errMess}}</h4>\n                </div>\n            </ion-col>\n            <ion-col col-12 col-md-6>\n                <ion-list *ngIf="dish">\n                    <ion-list-header>Comments</ion-list-header>\n                    <ion-item *ngFor="let comment of dish.comments" text-wrap>\n                        <h4> {{comment.comment}} </h4>\n                        <p> {{comment.rating}} Stars</p>\n                        <p><span> -- {{comment.author}} {{comment.date | date }}</span></p>\n                    </ion-item>\n                </ion-list>\n            </ion-col>\n        </ion-row>\n    </ion-grid>\n\n\n    <ion-fab bottom right [hidden]="favorite">\n        <button ion-fab (click)="addToFavorites()">\n            <ion-icon name="heart-outline"></ion-icon>\n        </button>\n    </ion-fab>\n    <ion-fab bottom right *ngIf="favorite">\n        <button ion-fab>\n            <ion-icon name="heart"></ion-icon>\n        </button>\n    </ion-fab>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/dishdetail/dishdetail.html"*/,
         }),
         __param(2, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])('baseUrl')),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
@@ -313,7 +313,7 @@ var FavoritesPage = (function () {
     };
     FavoritesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-favorites',template:/*ion-inline-start:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\favorites\favorites.html"*/'<!--\n\n  Generated template for the FavoritesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>My Favorites</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <div *ngIf="favorites">\n\n    <ion-list>\n\n      <ion-item-sliding *ngFor="let favorite of favorites" #item>\n\n        <ion-item>\n\n          <ion-thumbnail item-left>\n\n            <img src="{{BaseURL + favorite.image}}" />\n\n          </ion-thumbnail>\n\n          <h3>{{ favorite.name }}</h3>\n\n          <p>{{ favorite.description }}</p>\n\n        </ion-item>\n\n        <ion-item-options side="right">\n\n          <button ion-button color="danger" (click)="deleteFavorite(item, favorite.id)">\n\n            <ion-icon name="trash"></ion-icon>\n\n          </button>\n\n        </ion-item-options>\n\n      </ion-item-sliding>\n\n    </ion-list>\n\n  </div>\n\n  <div [hidden]="favorites || errMess">\n\n    <ion-spinner></ion-spinner>\n\n    <h4>Loading...</h4>\n\n  </div>\n\n  <div *ngIf="errMess">\n\n    <h2>Error</h2>\n\n    <h4>{{ errMess }}</h4>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\favorites\favorites.html"*/,
+            selector: 'page-favorites',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/favorites/favorites.html"*/'<!--\n  Generated template for the FavoritesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>My Favorites</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div *ngIf="favorites; else no_favorites">\n    <ion-list>\n      <ion-item-sliding *ngFor="let favorite of favorites" #item>\n        <ion-item>\n          <ion-thumbnail item-left>\n            <img src="{{baseUrl + favorite.image}}" />\n          </ion-thumbnail>\n          <h3>{{ favorite.name }}</h3>\n          <p>{{ favorite.description }}</p>\n        </ion-item>\n        <ion-item-options side="right">\n          <button ion-button color="danger" (click)="deleteFavorite(item, favorite.id)">\n            <ion-icon name="trash"></ion-icon>\n          </button>\n        </ion-item-options>\n      </ion-item-sliding>\n    </ion-list>\n  </div>\n  <ng-template #no_favorites>\n    <p>Wow...no favorites. Get a life.</p>\n  </ng-template>\n  <div [hidden]="favorites || errMess">\n    <ion-spinner></ion-spinner>\n    <h4>Loading...</h4>\n  </div>\n  <div *ngIf="errMess">\n    <h2>Error</h2>\n    <h4>{{ errMess }}</h4>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/favorites/favorites.html"*/,
         }),
         __param(3, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])('baseUrl')),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
@@ -330,6 +330,70 @@ var FavoritesPage = (function () {
 /***/ }),
 
 /***/ 114:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReservationPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the ReservationPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ReservationPage = (function () {
+    function ReservationPage(navCtrl, navParams, viewCtrl, formBuilder) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.formBuilder = formBuilder;
+        this.reservation = this.formBuilder.group({
+            guests: 3,
+            smoking: false,
+            dateTime: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
+        });
+    }
+    ReservationPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ReservationPage');
+    };
+    ReservationPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    ReservationPage.prototype.onSubmit = function () {
+        console.log(this.reservation.value);
+        this.viewCtrl.dismiss();
+    };
+    ReservationPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-reservation',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/reservation/reservation.html"*/'<!--\n  Generated template for the ReservationPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n<ion-toolbar color="primary-pale">\n  <ion-buttons start>\n    <button ion-button (click)="dismiss()">\n      <span ion-text color="primary" showWhen="ios">Cancel</span>\n      <ion-icon name="md-close" showWhen="android, windows"></ion-icon>\n    </button>\n  </ion-buttons>\n  <ion-title>Reserve Table</ion-title>\n</ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <form [formGroup]="reservation" (ngSubmit)="onSubmit()">\n    <ion-item>\n      <ion-label>No. of Guests</ion-label>\n      <ion-select formControlName="guests">\n        <ion-option value="1">1</ion-option>\n        <ion-option value="2">2</ion-option>\n        <ion-option value="3">3</ion-option>\n        <ion-option value="4">4</ion-option>\n        <ion-option value="6">5</ion-option>\n        <ion-option value="6">6</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n      <ion-label>Smoking?</ion-label>\n      <ion-toggle formControlName="smoking" checked="true"></ion-toggle>\n    </ion-item>\n    <ion-item>\n      <ion-label>Date and Time</ion-label>\n      <ion-datetime displayformat="MMM DD, \'YY hh:mm A" pickerFormat="MMM DD, \'YY hh:mm A" formControlName="dateTime"></ion-datetime>\n    </ion-item>\n    <button ion-button type="submit" [disabled]="!reservation.valid">Reserve</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/reservation/reservation.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
+    ], ReservationPage);
+    return ReservationPage;
+}());
+
+//# sourceMappingURL=reservation.js.map
+
+/***/ }),
+
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -394,7 +458,7 @@ var MenuPage = (function () {
     };
     MenuPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\menu\menu.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Menu</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="card-background-page">\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-12 col-lg-4 *ngFor="let dish of dishes">\n\n        <ion-card (click)="dishSelected($event, dish)" (pan)="addToFavorites(dish)">\n\n          <img src="{{baseUrl + dish.image}}" />\n\n          <div class="card-title">{{ dish.name }}</div>\n\n          <div class="card-subtitle">{{ dish.description }}</div>\n\n        </ion-card>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n  <div [hidden]="dishes || errMess">\n\n    <ion-spinner></ion-spinner>\n\n    <h4>Loading . . .</h4>\n\n  </div>\n\n  <div *ngIf="errMess">\n\n    <h2>Error</h2>\n\n    <h4>{{errMess}}</h4>\n\n  </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\menu\menu.html"*/,
+            selector: 'page-menu',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/menu/menu.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Menu</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="card-background-page">\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 col-lg-4 *ngFor="let dish of dishes">\n        <ion-card (click)="dishSelected($event, dish)" (pan)="addToFavorites(dish)">\n          <img src="{{baseUrl + dish.image}}" />\n          <div class="card-title">{{ dish.name }}</div>\n          <div class="card-subtitle">{{ dish.description }}</div>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <div [hidden]="dishes || errMess">\n    <ion-spinner></ion-spinner>\n    <h4>Loading . . .</h4>\n  </div>\n  <div *ngIf="errMess">\n    <h2>Error</h2>\n    <h4>{{errMess}}</h4>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/menu/menu.html"*/,
         }),
         __param(5, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])('baseUrl')),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
@@ -406,70 +470,6 @@ var MenuPage = (function () {
 }());
 
 //# sourceMappingURL=menu.js.map
-
-/***/ }),
-
-/***/ 115:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReservationPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the ReservationPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ReservationPage = (function () {
-    function ReservationPage(navCtrl, navParams, viewCtrl, formBuilder) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-        this.formBuilder = formBuilder;
-        this.reservation = this.formBuilder.group({
-            guests: 3,
-            smoking: false,
-            dateTime: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
-        });
-    }
-    ReservationPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ReservationPage');
-    };
-    ReservationPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    ReservationPage.prototype.onSubmit = function () {
-        console.log(this.reservation.value);
-        this.viewCtrl.dismiss();
-    };
-    ReservationPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-reservation',template:/*ion-inline-start:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\reservation\reservation.html"*/'<!--\n\n  Generated template for the ReservationPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n<ion-toolbar color="primary-pale">\n\n  <ion-buttons start>\n\n    <button ion-button (click)="dismiss()">\n\n      <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n      <ion-icon name="md-close" showWhen="android, windows"></ion-icon>\n\n    </button>\n\n  </ion-buttons>\n\n  <ion-title>Reserve Table</ion-title>\n\n</ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="reservation" (ngSubmit)="onSubmit()">\n\n    <ion-item>\n\n      <ion-label>No. of Guests</ion-label>\n\n      <ion-select formControlName="guests">\n\n        <ion-option value="1">1</ion-option>\n\n        <ion-option value="2">2</ion-option>\n\n        <ion-option value="3">3</ion-option>\n\n        <ion-option value="4">4</ion-option>\n\n        <ion-option value="6">5</ion-option>\n\n        <ion-option value="6">6</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Smoking?</ion-label>\n\n      <ion-toggle formControlName="smoking" checked="true"></ion-toggle>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Date and Time</ion-label>\n\n      <ion-datetime displayformat="MMM DD, \'YY hh:mm A" pickerFormat="MMM DD, \'YY hh:mm A" formControlName="dateTime"></ion-datetime>\n\n    </ion-item>\n\n    <button ion-button type="submit" [disabled]="!reservation.valid">Reserve</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\reservation\reservation.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
-    ], ReservationPage);
-    return ReservationPage;
-}());
-
-//# sourceMappingURL=reservation.js.map
 
 /***/ }),
 
@@ -496,35 +496,39 @@ webpackEmptyAsyncContext.id = 127;
 var map = {
 	"../pages/about/about.module": [
 		309,
-		7
+		18
 	],
 	"../pages/comment/comment.module": [
-		310,
-		1
+		312,
+		12
 	],
 	"../pages/contact/contact.module": [
-		311,
-		6
+		310,
+		17
 	],
 	"../pages/dishdetail/dishdetail.module": [
-		312,
-		5
+		311,
+		16
 	],
 	"../pages/favorites/favorites.module": [
 		313,
-		4
+		15
 	],
 	"../pages/login/login.module": [
 		314,
-		0
+		11
 	],
 	"../pages/menu/menu.module": [
-		315,
-		3
+		316,
+		14
+	],
+	"../pages/register/register.module": [
+		323,
+		10
 	],
 	"../pages/reservation/reservation.module": [
-		316,
-		2
+		315,
+		13
 	]
 };
 function webpackAsyncContext(req) {
@@ -589,7 +593,7 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\home\home.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n        <button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>A Confusion Restaurant</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-grid>\n\n        <ion-row align-items-center>\n\n            <ion-col col-12 col-lg-4>\n\n                <ion-card *ngIf="dish">\n\n                    <img src="{{baseUrl + dish.image}}"/>\n\n                    <ion-card-content>\n\n                        <ion-card-title>\n\n                            {{dish.name | uppercase}}\n\n                        </ion-card-title>\n\n                        <p>{{ dish.description}}</p>\n\n                    </ion-card-content>\n\n                </ion-card>\n\n                <div [hidden]="dish || dishErrMess">\n\n                    <ion-spinner></ion-spinner>\n\n                    <h4>Loading...</h4>\n\n                </div>\n\n                <div *ngIf="dishErrMess">\n\n                    <h2>Error</h2>\n\n                    <h4>{{dishErrMess}}</h4>\n\n                </div>\n\n            </ion-col>\n\n            <ion-col col-12 col-lg-4>\n\n                <ion-card *ngIf="promotion">\n\n                    <img src="{{baseUrl + promotion.image}}"/>\n\n                    <ion-card-content>\n\n                        <ion-card-title>\n\n                            {{promotion.name | uppercase}}\n\n                        </ion-card-title>\n\n                        <p>{{ promotion.description}}</p>\n\n                    </ion-card-content>\n\n                </ion-card>\n\n                <div [hidden]="promotion || promoErrMess">\n\n                    <ion-spinner></ion-spinner>\n\n                    <h4>Loading...</h4>\n\n                </div>\n\n                <div *ngIf="promoErrMess">\n\n                    <h2>Error</h2>\n\n                    <h4>{{promoErrMess}}</h4>\n\n                </div>\n\n            </ion-col>\n\n            <ion-col col-12 col-lg-4>\n\n                <ion-card *ngIf="leader">\n\n                    <img src="{{baseUrl + leader.image}}"/>\n\n                    <ion-card-content>\n\n                        <ion-card-title>\n\n                            {{leader.name | uppercase}}\n\n                        </ion-card-title>\n\n                        <p>{{ leader.designation}}</p>\n\n                        <p>{{ leader.description}}</p>\n\n                    </ion-card-content>\n\n                </ion-card>\n\n                <div [hidden]="leader || leaderErrMess">\n\n                    <ion-spinner></ion-spinner>\n\n                    <h4>Loading...</h4>\n\n                </div>\n\n                <div *ngIf="leaderErrMess">\n\n                    <h2>Error</h2>\n\n                    <h4>{{leaderErrMess}}</h4>\n\n                </div>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n\n\n    <ion-fab right bottom>\n\n        <button ion-fab color="accent">\n\n            <ion-icon name="arrow-dropup"></ion-icon>\n\n        </button>\n\n        <ion-fab-list side="top">\n\n            <button ion-fab class="btn-mail">\n\n                <ion-icon name="mail"></ion-icon>\n\n            </button>\n\n            <button ion-fab class="btn-google-plus">\n\n                <ion-icon name="logo-googleplus"></ion-icon>\n\n            </button>\n\n            <button ion-fab class="btn-youtube">\n\n                <ion-icon name="logo-youtube"></ion-icon>\n\n            </button>\n\n            <button ion-fab class="btn-twitter">\n\n                <ion-icon name="logo-twitter"></ion-icon>\n\n            </button>\n\n            <button ion-fab class="btn-facebook">\n\n                <ion-icon name="logo-facebook"></ion-icon>\n\n            </button>\n\n            <button ion-fab class="btn-linkedin">\n\n                <ion-icon name="logo-linkedin"></ion-icon>\n\n            </button>\n\n        </ion-fab-list>\n\n    </ion-fab>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\wamp64\www\coursera\Ionic\conFusion\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/home/home.html"*/'<ion-header>\n    <ion-navbar color="primary">\n        <button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>A Confusion Restaurant</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-grid>\n        <ion-row align-items-center>\n            <ion-col col-12 col-lg-4>\n                <ion-card *ngIf="dish">\n                    <img src="{{baseUrl + dish.image}}"/>\n                    <ion-card-content>\n                        <ion-card-title>\n                            {{dish.name | uppercase}}\n                        </ion-card-title>\n                        <p>{{ dish.description}}</p>\n                    </ion-card-content>\n                </ion-card>\n                <div [hidden]="dish || dishErrMess">\n                    <ion-spinner></ion-spinner>\n                    <h4>Loading...</h4>\n                </div>\n                <div *ngIf="dishErrMess">\n                    <h2>Error</h2>\n                    <h4>{{dishErrMess}}</h4>\n                </div>\n            </ion-col>\n            <ion-col col-12 col-lg-4>\n                <ion-card *ngIf="promotion">\n                    <img src="{{baseUrl + promotion.image}}"/>\n                    <ion-card-content>\n                        <ion-card-title>\n                            {{promotion.name | uppercase}}\n                        </ion-card-title>\n                        <p>{{ promotion.description}}</p>\n                    </ion-card-content>\n                </ion-card>\n                <div [hidden]="promotion || promoErrMess">\n                    <ion-spinner></ion-spinner>\n                    <h4>Loading...</h4>\n                </div>\n                <div *ngIf="promoErrMess">\n                    <h2>Error</h2>\n                    <h4>{{promoErrMess}}</h4>\n                </div>\n            </ion-col>\n            <ion-col col-12 col-lg-4>\n                <ion-card *ngIf="leader">\n                    <img src="{{baseUrl + leader.image}}"/>\n                    <ion-card-content>\n                        <ion-card-title>\n                            {{leader.name | uppercase}}\n                        </ion-card-title>\n                        <p>{{ leader.designation}}</p>\n                        <p>{{ leader.description}}</p>\n                    </ion-card-content>\n                </ion-card>\n                <div [hidden]="leader || leaderErrMess">\n                    <ion-spinner></ion-spinner>\n                    <h4>Loading...</h4>\n                </div>\n                <div *ngIf="leaderErrMess">\n                    <h2>Error</h2>\n                    <h4>{{leaderErrMess}}</h4>\n                </div>\n            </ion-col>\n        </ion-row>\n    </ion-grid>\n\n    <ion-fab right bottom>\n        <button ion-fab color="accent">\n            <ion-icon name="arrow-dropup"></ion-icon>\n        </button>\n        <ion-fab-list side="top">\n            <button ion-fab class="btn-mail">\n                <ion-icon name="mail"></ion-icon>\n            </button>\n            <button ion-fab class="btn-google-plus">\n                <ion-icon name="logo-googleplus"></ion-icon>\n            </button>\n            <button ion-fab class="btn-youtube">\n                <ion-icon name="logo-youtube"></ion-icon>\n            </button>\n            <button ion-fab class="btn-twitter">\n                <ion-icon name="logo-twitter"></ion-icon>\n            </button>\n            <button ion-fab class="btn-facebook">\n                <ion-icon name="logo-facebook"></ion-icon>\n            </button>\n            <button ion-fab class="btn-linkedin">\n                <ion-icon name="logo-linkedin"></ion-icon>\n            </button>\n        </ion-fab-list>\n    </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/home/home.html"*/
         }),
         __param(4, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])('baseUrl')),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
@@ -712,21 +716,26 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_baseUrl__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(302);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_about_about__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_menu_menu__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_contact_contact__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_dishdetail_dishdetail__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_favorites_favorites__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_reservation_reservation__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_dish_dish__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_leader_leader__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_promotion_promotion__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_process_httpmsg_process_httpmsg__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_favorite_favorite__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_local_notifications__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_email_composer__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_social_sharing__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_about_about__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_menu_menu__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_contact_contact__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_dishdetail_dishdetail__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_favorites_favorites__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_reservation_reservation__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_register_register__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_dish_dish__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_leader_leader__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_promotion_promotion__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_process_httpmsg_process_httpmsg__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_favorite_favorite__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -754,59 +763,72 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_about_about__["a" /* AboutPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_menu_menu__["a" /* MenuPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_contact_contact__["a" /* ContactPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_dishdetail_dishdetail__["a" /* DishdetailPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_favorites_favorites__["a" /* FavoritesPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_reservation_reservation__["a" /* ReservationPage */],
+                __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_about_about__["a" /* AboutPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_menu_menu__["a" /* MenuPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_contact_contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_dishdetail_dishdetail__["a" /* DishdetailPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_favorites_favorites__["a" /* FavoritesPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_register_register__["a" /* RegisterPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_reservation_reservation__["a" /* ReservationPage */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/comment/comment.module#CommentPageModule', name: 'CommentPage', segment: 'comment', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/comment/comment.module#CommentPageModule', name: 'CommentPage', segment: 'comment', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dishdetail/dishdetail.module#DishdetailPageModule', name: 'DishdetailPage', segment: 'dishdetail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/favorites/favorites.module#FavoritesPageModule', name: 'FavoritesPage', segment: 'favorites', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/reservation/reservation.module#ReservationPageModule', name: 'ReservationPage', segment: 'reservation', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/reservation/reservation.module#ReservationPageModule', name: 'ReservationPage', segment: 'reservation', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["a" /* IonicStorageModule */].forRoot()
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_about_about__["a" /* AboutPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_menu_menu__["a" /* MenuPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_contact_contact__["a" /* ContactPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_dishdetail_dishdetail__["a" /* DishdetailPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_favorites_favorites__["a" /* FavoritesPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_reservation_reservation__["a" /* ReservationPage */],
+                __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_about_about__["a" /* AboutPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_menu_menu__["a" /* MenuPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_contact_contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_dishdetail_dishdetail__["a" /* DishdetailPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_favorites_favorites__["a" /* FavoritesPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_register_register__["a" /* RegisterPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_reservation_reservation__["a" /* ReservationPage */],
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__["a" /* Camera */],
+                __WEBPACK_IMPORTED_MODULE_7__ionic_native_email_composer__["a" /* EmailComposer */],
+                __WEBPACK_IMPORTED_MODULE_6__ionic_native_local_notifications__["a" /* LocalNotifications */],
+                __WEBPACK_IMPORTED_MODULE_8__ionic_native_social_sharing__["a" /* SocialSharing */],
+                __WEBPACK_IMPORTED_MODULE_19__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_20__ionic_native_splash_screen__["a" /* SplashScreen */],
+                Storage,
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicErrorHandler */] },
                 { provide: 'baseUrl', useValue: __WEBPACK_IMPORTED_MODULE_4__shared_baseUrl__["a" /* baseUrl */] },
-                __WEBPACK_IMPORTED_MODULE_16__providers_dish_dish__["a" /* DishProvider */],
-                __WEBPACK_IMPORTED_MODULE_17__providers_leader_leader__["a" /* LeaderProvider */],
-                __WEBPACK_IMPORTED_MODULE_18__providers_promotion_promotion__["a" /* PromotionProvider */],
-                __WEBPACK_IMPORTED_MODULE_19__providers_process_httpmsg_process_httpmsg__["a" /* ProcessHttpmsgProvider */],
-                __WEBPACK_IMPORTED_MODULE_20__providers_favorite_favorite__["a" /* FavoriteProvider */]
+                __WEBPACK_IMPORTED_MODULE_21__providers_dish_dish__["a" /* DishProvider */],
+                __WEBPACK_IMPORTED_MODULE_22__providers_leader_leader__["a" /* LeaderProvider */],
+                __WEBPACK_IMPORTED_MODULE_23__providers_promotion_promotion__["a" /* PromotionProvider */],
+                __WEBPACK_IMPORTED_MODULE_24__providers_process_httpmsg_process_httpmsg__["a" /* ProcessHttpmsgProvider */],
+                __WEBPACK_IMPORTED_MODULE_25__providers_favorite_favorite__["a" /* FavoriteProvider */]
             ]
         })
     ], AppModule);
@@ -829,10 +851,10 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_about_about__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_menu_menu__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_menu_menu__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_contact_contact__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_favorites_favorites__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_reservation_reservation__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_reservation_reservation__ = __webpack_require__(114);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -898,7 +920,7 @@ var MyApp = (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\wamp64\www\coursera\Ionic\conFusion\src\app\app.html"*/'<ion-split-pane>\n\n<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar color="primary-dark">\n\n      <ion-title>A ConFusion Restaurant</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content class="background-pale">\n\n    <ion-list>\n\n      <ion-list-header color="primary-light" text-wrap>\n\n        <ion-thumbnail item-left>\n\n          <img src="../assets/imgs/rest_logo.png" />\n\n        </ion-thumbnail>\n\n        <h3>Ristorante Con Fusion</h3>\n\n      </ion-list-header>\n\n      <button color="primary-pale" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        <ion-icon [name]="p.icon" item-left></ion-icon>\n\n        {{p.title}}\n\n      </button>\n\n      <button color="primary-pale" menuClose ion-item (click)="openReserve()">\n\n      <ion-icon name="restaurant" item-left></ion-icon>\n\n      Reserve Table\n\n      </button>\n\n      <button color="primary-pale" menuClose ion-item (click)="openLogin()">\n\n        <ion-icon name="log-in" item-left></ion-icon>\n\n        Login\n\n      </button>\n\n\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>\n\n</ion-split-pane>'/*ion-inline-end:"C:\wamp64\www\coursera\Ionic\conFusion\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/app/app.html"*/'<ion-split-pane>\n<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar color="primary-dark">\n      <ion-title>A ConFusion Restaurant</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content class="background-pale">\n    <ion-list>\n      <ion-list-header color="primary-light" text-wrap>\n        <ion-thumbnail item-left>\n          <img src="../assets/imgs/rest_logo.png" />\n        </ion-thumbnail>\n        <h3>Ristorante Con Fusion</h3>\n      </ion-list-header>\n      <button color="primary-pale" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        <ion-icon [name]="p.icon" item-left></ion-icon>\n        {{p.title}}\n      </button>\n      <button color="primary-pale" menuClose ion-item (click)="openReserve()">\n      <ion-icon name="restaurant" item-left></ion-icon>\n      Reserve Table\n      </button>\n      <button color="primary-pale" menuClose ion-item (click)="openLogin()">\n        <ion-icon name="log-in" item-left></ion-icon>\n        Login\n      </button>\n\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>\n</ion-split-pane>'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Platform */],
@@ -910,6 +932,95 @@ var MyApp = (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 324:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(322);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the RegisterPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var RegisterPage = (function () {
+    function RegisterPage(navCtrl, navParams, viewCtrl, camera, formBuilder) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.camera = camera;
+        this.formBuilder = formBuilder;
+        this.image = 'assets/images/logo.png';
+        this.registerForm = this.formBuilder.group({
+            firstname: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(2), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(25)]],
+            lastname: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(2), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(25)]],
+            username: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(5), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(25)]],
+            password: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(8), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(25)]],
+            telnum: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].pattern]],
+            email: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].email]],
+        });
+    }
+    RegisterPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss(true);
+    };
+    RegisterPage.prototype.getPicture = function () {
+        var _this = this;
+        var options = {
+            quality: 100,
+            targetHeight: 100,
+            targetWidth: 100,
+            correctOrientation: true,
+            allowEdit: true,
+            destinationType: this.camera.DestinationType.FILE_URI,
+            encodingType: this.camera.EncodingType.PNG,
+            mediaType: this.camera.MediaType.PICTURE,
+            cameraDirection: this.camera.Direction.FRONT
+        };
+        this.camera.getPicture(options).then(function (imageData) {
+            _this.image = imageData;
+            console.log(imageData);
+        }, function (err) {
+            console.log('Error obtaining picture');
+        });
+    };
+    RegisterPage.prototype.onSubmit = function () {
+        console.log(this.registerForm.value);
+        this.dismiss();
+    };
+    RegisterPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RegisterPage');
+    };
+    RegisterPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-register',template:/*ion-inline-start:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/register/register.html"*/'<ion-header>\n\n  <ion-toolbar color="primary-pale">\n    <ion-buttons start>\n      <button ion-button (click)="dismiss()">\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>Register</ion-title>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card>\n    <ion-card-header color="primary">Your Picture</ion-card-header>\n    <img src="{{image}}" />\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <button ion-button small (click)="getPicture()">Take Picture</button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">\n    <ion-item>\n      <ion-label floating>First Name</ion-label>\n      <ion-input type="text" formControlName="firstname"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Last Name</ion-label>\n      <ion-input type="text" formControlName="lastname"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Username</ion-label>\n      <ion-input type="text" formControlName="username"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Password</ion-label>\n      <ion-input type="password" formControlName="password"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Tel. Number</ion-label>\n      <ion-input type="tel" formControlName="telnum"  pattern="[0-9]*"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Email</ion-label>\n      <ion-input type="email" formControlName="email" email></ion-input>\n    </ion-item>\n    <button ion-button type="submit" [disabled]="!registerForm.valid">Register</button>\n  </form>\n</ion-content>'/*ion-inline-end:"/Applications/MAMP/htdocs/coursera/ionic/conFusion/src/pages/register/register.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object])
+    ], RegisterPage);
+    return RegisterPage;
+    var _a, _b, _c, _d, _e;
+}());
+
+//# sourceMappingURL=register.js.map
 
 /***/ }),
 

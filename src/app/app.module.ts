@@ -4,6 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { baseUrl } from "../shared/baseUrl";
 import { IonicStorageModule } from "@ionic/storage";
+import { LocalNotifications } from "@ionic-native/local-notifications";
+import { EmailComposer } from "@ionic-native/email-composer";
+import { SocialSharing } from "@ionic-native/social-sharing";
+import { Camera } from "@ionic-native/camera";
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -13,6 +17,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { DishdetailPage} from "../pages/dishdetail/dishdetail";
 import { FavoritesPage } from "../pages/favorites/favorites";
 import { ReservationPage } from "../pages/reservation/reservation";
+import { RegisterPage } from "../pages/register/register";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,6 +36,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     ContactPage,
     DishdetailPage,
     FavoritesPage,
+    RegisterPage,
     ReservationPage,
   ],
   imports: [
@@ -48,9 +54,14 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     ContactPage,
     DishdetailPage,
     FavoritesPage,
+    RegisterPage,
     ReservationPage,
   ],
   providers: [
+    Camera,
+    EmailComposer,
+    LocalNotifications,
+    SocialSharing,
     StatusBar,
     SplashScreen,
     Storage,
